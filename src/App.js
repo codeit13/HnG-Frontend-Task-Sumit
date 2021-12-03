@@ -19,9 +19,9 @@ function App() {
   const [appStatus, setAppStatus] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api')
+    axios.get('/db/db.json')
       .then(({ data }) => {
-        
+        data = data.api
         setNavbar(data.navbar);
         setOffers(data.cards);
         setcarousels(data.carousel);
